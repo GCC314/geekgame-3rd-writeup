@@ -34,11 +34,11 @@ flag{welcomenewplayers}
 
 > 在北京大学（校级）高性能计算平台中，什么命令可以提交一个非交互式任务？                        
 
-由https://hpc.pku.edu.cn/_book/guide/slurm/slurm.html得到答案为`sbatch`。
+由[https://hpc.pku.edu.cn/_book/guide/slurm/slurm.html](https://hpc.pku.edu.cn/_book/guide/slurm/slurm.html)得到答案为`sbatch`。
 
 > 根据 GPL 许可证的要求，基于 Linux 二次开发的操作系统内核必须开源。例如小米公司开源了 Redmi K60 Ultra 手机的内核。其内核版本号是？
 
-先在https://github.com/MiCode/Xiaomi_Kernel_OpenSource中找到 Redmi K60 Ultra 对应的branch: `corot-t-oss`，然后在https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/corot-t-oss找到他的Makefile:
+先在[https://github.com/MiCode/Xiaomi_Kernel_OpenSource](https://github.com/MiCode/Xiaomi_Kernel_OpenSource)中找到 Redmi K60 Ultra 对应的branch: `corot-t-oss`，然后在[https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/corot-t-oss](https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/corot-t-oss)找到他的Makefile:
 
 ```makefile
 # SPDX-License-Identifier: GPL-2.0
@@ -53,13 +53,13 @@ EXTRAVERSION =
 
 > 每款苹果产品都有一个内部的识别名称（Identifier），例如初代 iPhone 是 `iPhone1,1`。那么 Apple Watch Series 8（蜂窝版本，41mm 尺寸）是什么？
 
-在页面https://gist.github.com/adamawolf/3048717，我们可以找到答案为`Watch6,16`。
+在页面[https://gist.github.com/adamawolf/3048717](https://gist.github.com/adamawolf/3048717)，我们可以找到答案为`Watch6,16`。
 
 > 本届 PKU GeekGame 的比赛平台会禁止选手昵称中包含某些特殊字符。截止到 2023 年 10 月 1 日，共禁止了多少个字符？（提示：本题答案与 Python 版本有关，以平台实际运行情况为准）
 
 可恶😡这b题目怎么还和Python版本有关的啊，令人感叹。
 
-我们可以在https://github.com/PKU-GeekGame/gs-backend/blob/master/src/store/user_profile_store.py中找到后端的处理逻辑:
+我们可以在[https://github.com/PKU-GeekGame/gs-backend/blob/master/src/store/user_profile_store.py](https://github.com/PKU-GeekGame/gs-backend/blob/master/src/store/user_profile_store.py)中找到后端的处理逻辑:
 
 ```python
 from unicategories import categories
@@ -111,7 +111,7 @@ def unicode_chars(*cats: str) -> Set[str]:
 >
 > ![](./img/osint-challenge.jpg)
 
-先把图上带英文的机构名称`tuspark zpark konza kacst`一起搜一遍，找到这样一篇报道https://www.iasp.ws/activities/news/our-fantastic-partners-at-iasp2023-luxembourg，大概是在Luxembourg举办的某个组织的某个活动。在IASP的官网的News中我们还能找到别的带有这个建筑物的报道，比如https://www.iasp.ws/activities/news/an-exciting-social-programme-awaits-our-guests-at-iasp-2023，里面提到这个建筑物是Luxembourg Philharmonie。我们查询他的官网可以得到答案为`philharmonie.lu`。
+先把图上带英文的机构名称`tuspark zpark konza kacst`一起搜一遍，找到这样一篇报道[https://www.iasp.ws/activities/news/our-fantastic-partners-at-iasp2023-luxembourg](https://www.iasp.ws/activities/news/our-fantastic-partners-at-iasp2023-luxembourg)，大概是在Luxembourg举办的某个组织的某个活动。在IASP的官网的News中我们还能找到别的带有这个建筑物的报道，比如[https://www.iasp.ws/activities/news/an-exciting-social-programme-awaits-our-guests-at-iasp-2023](https://www.iasp.ws/activities/news/an-exciting-social-programme-awaits-our-guests-at-iasp-2023)，里面提到这个建筑物是Luxembourg Philharmonie。我们查询他的官网可以得到答案为`philharmonie.lu`。
 
 于是得到两个flag：
 
@@ -148,7 +148,7 @@ flag{Anc1enT_tr4nsf3R_pr0tOcOI_15_57111_in_u5e_t0d4y}
 
 原本想把第二问也拿下的，但这个ZMODEM文档疑似有点恶心了，所以只能第二阶段解了。
 
-看了很久文档http://wiki.synchro.net/ref:zmodem，我们需要解出的是Client收到的`ZDATA`段的内容，也就是这里面大小比较大的这几个包的内容。
+看了很久文档[http://wiki.synchro.net/ref:zmodem](http://wiki.synchro.net/ref:zmodem)，我们需要解出的是Client收到的`ZDATA`段的内容，也就是这里面大小比较大的这几个包的内容。
 
 ![](./img/prob05_3.png)
 
@@ -176,7 +176,7 @@ flag{traFf1c_aNa1y51s_4_ZMODEM}
 
 ### flag1
 
-我们先查看`challenge_1.zip`的内容，里面是一个`chromedriver_linux64.zip`和一个`flag1.txt`。可以猜想是明文攻击。我们需要找到对应版本的`chromedriver_linux64.zip`，于是我写了一个脚本`ck.mjs`从https://chromedriver.storage.googleapis.com/?delimiter=/&prefix=xxx/获得zip文件对应的size，可以发现版本89.0.4389.23大小为5845152，正好是我们要的压缩包。我们用工具pkcrack：
+我们先查看`challenge_1.zip`的内容，里面是一个`chromedriver_linux64.zip`和一个`flag1.txt`。可以猜想是明文攻击。我们需要找到对应版本的`chromedriver_linux64.zip`，于是我写了一个脚本`ck.mjs`从[https://chromedriver.storage.googleapis.com/?delimiter=/&prefix=xxx/](https://chromedriver.storage.googleapis.com/?delimiter=/&prefix=xxx/)获得zip文件对应的size，可以发现版本89.0.4389.23大小为5845152，正好是我们要的压缩包。我们用工具pkcrack：
 
 ```bash
 ./bin/pkcrack -c "chromedriver_linux64.zip" -p chromedriver_linux64.zip -C challenge_1.zip -P build/c_1.zip -d decrypt.zip
@@ -192,7 +192,7 @@ flag{Insecure-Zip-Crypto-From-Known-File-Contents}
 
 `challenge_2.zip`中只有一个文件`flag2.pcapng`，我们应该找到pcapng文件的格式并进行明文攻击，但我一开始找成pcap文件以至于第一阶段没能解压出来😭
 
-在https://pcapng.com/#SHB_BlockType我们看到pcapng文件的开头有如下格式:
+在[https://pcapng.com/#SHB_BlockType](https://pcapng.com/#SHB_BlockType)我们看到pcapng文件的开头有如下格式:
 
 ```plaintext
 0a 0d 0d 0a .. .. .. .. 4d 3c 2b 1a .. .. .. ..
@@ -236,7 +236,7 @@ flag{inSecUrE-zip-crypTO-eVeN-withOuT-KNOWN-fiLe-CoNtENT}
 
 其中拿Trinket和Latte对Sanity有增益，拿道具和开门的动作也对Sanity有增益，但Sanity也会随着操作次数而下降。还有一个Help操作可以有一定几率增加Sanity，但有一定几率减少Sanity。第一个flag的目标是以117%以上的Sanity过关。而理论上不Help时最优的操作到结尾也不能让Sanity高于100%。
 
-我一开始想的做法是写个自动脚本，每次在Door 2前Help，直到Sanity足够。但是我跑了一会感觉几率太低，于是就玉玉开摆了。结果第一阶段最后一天（又是这天x）我看源代码的时候看到（https://github.com/tinichu316/Dark_Room/blob/master/player.py，Line 163）：
+我一开始想的做法是写个自动脚本，每次在Door 2前Help，直到Sanity足够。但是我跑了一会感觉几率太低，于是就玉玉开摆了。结果第一阶段最后一天（又是这天x）我看源代码的时候看到（[https://github.com/tinichu316/Dark_Room/blob/master/player.py](https://github.com/tinichu316/Dark_Room/blob/master/player.py)，Line 163）：
 
 ```python
 def useItemTarget(self, item):
@@ -346,7 +346,7 @@ flag{pAR3inG_ANvI1_iSeAaasY2}
 b'{"alg":"HS256"}{"data":{"level":"2","remaining_guesses":"8","target":"\\uD83D\\uDC6A\\uD83D\\uDC44\\uD83D\\uDC85\\uD83D\\uDC44\\uD83D\\uDC48\\uD83D\\uDC55\\uD83D\\uDC74\\uD83D\\uDC40\\uD83D\\uDC7B\\uD83D\\uDC43\\uD83D\\uDC5E\\uD83D\\uDC76\\uD83D\\uDC87\\uD83D\\uDC46\\uD83D\\uDC76\\uD83D\\uDC84\\uD83D\\uDC43\\uD83D\\uDC5C\\uD83D\\uDC69\\uD83D\\uDC64\\uD83D\\uDC67\\uD83D\\uDC60\\uD83D\\uDC43\\uD83D\\uDC40\\uD83D\\uDC5C\\uD83D\\uDC7B\\uD83D\\uDC75\\uD83D\\uDC43\\uD83D\\uDC63\\uD83D\\uDC59\\uD83D\\uDC83\\uD83D\\uDC82\\uD83D\\uDC80\\uD83D\\uDC7C\\uD83D\\uDC53\\uD83D\\uDC56\\uD83D\\uDC69\\uD83D\\uDC88\\uD83D\\uDC53\\uD83D\\uDC5F\\uD83D\\uDC49\\uD83D\\uDC44\\uD83D\\uDC69\\uD83D\\uDC3F\\uD83D\\uDC5B\\uD83D\\uDC5E\\uD83D\\uDC7B\\uD83D\\uDC7E\\uD83D\\uDC53\\uD83D\\uDC81\\uD83D\\uDC7A\\uD83D\\uDC74\\uD83D\\uDC40\\uD83D\\uDC79\\uD83D\\uDC8A\\uD83D\\uDC5A\\uD83D\\uDC3F\\uD83D\\uDC48\\uD83D\\uDC67\\uD83D\\uDC48\\uD83D\\uDC41\\uD83D\\uDC66\\uD83D\\uDC6A\\uD83D\\uDC8A"},"nbf":1697888294,"iat":1697888294}\x17\x8a2[o\xac\xe2t q\x8e\xa4\x89\xe1\x87w%\x8a\xee\x08\\\xfbb\xcb\x83\x92[J\x9fr\xda'
 ```
 
-实际上面的东西叫JWT（Json Web Token），最后那一串bytes是密钥。我们可以看到target里面大概就是编码表示的emoji串。我原本是把它放到Firefox控制台里然后删掉重复斜杠并log得到emoji串的，但是写Writeup的时候我才发现可以用https://jwt.io/直接解析jwt，我们得到：
+实际上面的东西叫JWT（Json Web Token），最后那一串bytes是密钥。我们可以看到target里面大概就是编码表示的emoji串。我原本是把它放到Firefox控制台里然后删掉重复斜杠并log得到emoji串的，但是写Writeup的时候我才发现可以用[https://jwt.io/](https://jwt.io/)直接解析jwt，我们得到：
 
 ```json
 {
@@ -411,7 +411,7 @@ flag{TotALlY-nO-sECuRItY-In-the-sAme-oRIgiN}
 
 Typescript真的纯纯不会，类型推导完全写不来，只能进行一些搜索引擎的搜。
 
-先是参考了两个比较好的教程：https://zhuanlan.zhihu.com/p/452657140和https://cloud.tencent.com/developer/article/2287845，在里面找到了如下类型：
+先是参考了两个比较好的教程：[https://zhuanlan.zhihu.com/p/452657140](https://zhuanlan.zhihu.com/p/452657140)和[https://cloud.tencent.com/developer/article/2287845](https://cloud.tencent.com/developer/article/2287845)，在里面找到了如下类型：
 
 ```typescript
 type StartWith<Str extends string, Prefix extends string> = Str extends `${Prefix}${infer Rest}` ? true : false;
@@ -464,7 +464,7 @@ type FunctionParameters<T> = T extends (...args: infer P) => any ? P : never;
 type t2 = FunctionParameters<ExtractInner<t1>>[1]; // {'flag{xxx}' : never} & Record<string, string>
 ```
 
-3. 去掉右边的`Record`。尝试的最久的一个地方。因为这就相当于替换掉一个key对应value类型，其他不变的一个record，用一般的mapped type + keyof的方案貌似不能取出flag。在https://stackoverflow.com/questions/51465182/how-to-remove-index-signature-using-mapped-types，我找到了我需要的方法：
+3. 去掉右边的`Record`。尝试的最久的一个地方。因为这就相当于替换掉一个key对应value类型，其他不变的一个record，用一般的mapped type + keyof的方案貌似不能取出flag。在[https://stackoverflow.com/questions/51465182/how-to-remove-index-signature-using-mapped-types](https://stackoverflow.com/questions/51465182/how-to-remove-index-signature-using-mapped-types)，我找到了我需要的方法：
 
 ```typescript
 type NeverKeys<T, R> = { [K in keyof T]: T[K] extends never ? string : R };
@@ -1021,7 +1021,7 @@ flag{RAnd0M_1s_eZ_2_pRED1cT}
 
 现在他的输出在flag1的基础上还和其他两个随机数生成器生成的随机串进行了异或，其中一个随机数生成器的种子`seed1`是他给出的，另一个随机数的种子`seed2`由我们指定。而且需要`seed1 != seed2`。
 
-如果我们能对任意一个给定的`seed`，都能快速找到另一个不同的`seed`使得这两个随机数生成器生成相同的数，那我们就能把问题转化成flag1。我搜索了`MT19937 seed collision`，但是似乎没啥好的结果，那我只能去审计源代码，在https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Lib/random.py#L110我们可以知道`random.Random`是继承了`_random.Random`，而`_random`的代码在https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Modules/_randommodule.c#L125，在Line 306我们找到以下注释：
+如果我们能对任意一个给定的`seed`，都能快速找到另一个不同的`seed`使得这两个随机数生成器生成相同的数，那我们就能把问题转化成flag1。我搜索了`MT19937 seed collision`，但是似乎没啥好的结果，那我只能去审计源代码，在[https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Lib/random.py#L110](https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Lib/random.py#L110)我们可以知道`random.Random`是继承了`_random.Random`，而`_random`的代码在[https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Modules/_randommodule.c#L125](https://github.com/python/cpython/blob/5e7727b05232b43589d177c15263d7f4f8c584a0/Modules/_randommodule.c#L125)，在Line 306我们找到以下注释：
 
 ```c
     /* This algorithm relies on the number being unsigned.
